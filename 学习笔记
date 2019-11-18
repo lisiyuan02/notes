@@ -1,0 +1,28 @@
+Date:2019.11.17
+
+1. 吴恩达视频教程第一章　　学习网址https://study.163.com/course/courseLearn.htm?courseId=1004570029#/learn/text?lessonId=1050360369&courseId=1004570029
+
+2. cuda 命令行可以使用，但是pycharm中无法导入的问题　　点击run->edit configurations 添加环境变量LD_LIBRARY_PATH　　  /usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
+
+3.莫烦python-----keras学习完P8
+
+Date:2019.11.18
+
+1.git 学习：
+登录自己的github账号，创建自己的仓库。
+从github克隆自己的仓库可以使用https（但是操作需要每次输入用户名和密码），也可以创建SSH进行本地与远程的链接。
+(1) 创建ssh：右上角头像，点击setting——>SSH and GPG keys--->点击Adding a new SSH key to your GitHub account→---->点击Generating a new SSH key and adding it to the ssh-agent（依据显示的命令进行命令行操作）--->退回去进行xclip将生成的秘钥进行复制，如果无法使用xclip，则需要~/.ssh/id_rsa.pub中的内容复制到github网站中的ssh框中，title就写自己的名字就行。
+(2) git命令：git clone <自己的ssh地址>　将仓库下载到自己的本地--->cd到仓库--->新建文件--->git add 文件名--->git commit -m "info"--->git push(这样就将文件推到网页上了)
+	（clone下的本地文件夹就属于本地工作站，通过add命令推到staged/index属于临时区，通过commit命令推到分支，再通push 　　　　　　　　　　　命令推到oringa端）
+	git log查看日志　　git show 版本号可以查看详细信息　　git reset 以及相应的一些其他命令可以实现回滚版本
+	git pull  拉一下远端
+(3) 解决冲突，当两个工作站同时对一个文件进行了修改进行推送，则会提示冲突，接下来输入git pull命令，打开本地的文件修改，之后重新add commit push 即可，也可用另一个命令进行直接拒绝另一个人的修改
+(4) 分支，git branch branch1 创建了分支branch1  git checkout branch1 就切换到branch1　　
+git branch -vv　查看本地分支与远端分支是否建立了联系
+
+可以使用一个命令 git checkout -b branch1  创建分支１并且切换到banch1
+git pull 把远端的好多请求拉回本地（更新一下代码），然后　git merge branch1 在master基础上与branch1合并，git push 推到远端
+(5) 合并分支　git merge branch1 就合并了分支了。
+(6) 记住那张图https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg
+
+
