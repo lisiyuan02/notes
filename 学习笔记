@@ -1,0 +1,69 @@
+Date:2019.11.17
+
+1. 吴恩达视频教程第一章　　学习网址https://study.163.com/course/courseLearn.htm?courseId=1004570029#/learn/text?lessonId=1050360369&courseId=1004570029
+
+2. cuda 命令行可以使用，但是pycharm中无法导入的问题　　点击run->edit configurations 添加环境变量LD_LIBRARY_PATH　　  /usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64
+
+3.莫烦python-----keras学习完P8
+
+Date:2019.11.18
+
+1.git 学习：
+登录自己的github账号，创建自己的仓库。
+从github克隆自己的仓库可以使用https（但是操作需要每次输入用户名和密码），也可以创建SSH进行本地与远程的链接。
+(1) 创建ssh：右上角头像，点击setting——>SSH and GPG keys--->点击Adding a new SSH key to your GitHub account→---->点击Generating a new SSH key and adding it to the ssh-agent（依据显示的命令进行命令行操作）--->退回去进行xclip将生成的秘钥进行复制，如果无法使用xclip，则需要~/.ssh/id_rsa.pub中的内容复制到github网站中的ssh框中，title就写自己的名字就行。
+(2) git命令：git clone <自己的ssh地址>　将仓库下载到自己的本地--->cd到仓库--->新建文件--->git add 文件名--->git commit -m "info"--->git push(这样就将文件推到网页上了)
+	（clone下的本地文件夹就属于本地工作站，通过add命令推到staged/index属于临时区，通过commit命令推到分支，再通push 　　　　　　　　　　　命令推到oringa端）
+	git log查看日志　　git show 版本号可以查看详细信息　　git reset 以及相应的一些其他命令可以实现回滚版本
+	git pull  拉一下远端
+(3) 解决冲突，当两个工作站同时对一个文件进行了修改进行推送，则会提示冲突，接下来输入git pull命令，打开本地的文件修改，之后重新add commit push 即可，也可用另一个命令进行直接拒绝另一个人的修改
+(4) 分支，git branch branch1 创建了分支branch1  git checkout branch1 就切换到branch1　　
+git branch -vv　查看本地分支与远端分支是否建立了联系
+
+可以使用一个命令 git checkout -b branch1  创建分支１并且切换到banch1
+git pull 把远端的好多请求拉回本地（更新一下代码），然后　git merge branch1 在master基础上与branch1合并，git push 推到远端
+(5) 合并分支　git merge branch1 就合并了分支了。
+(6) 记住那张图https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg
+
+Date:2019.11.18
+1.mysql的安装：
+　　　（1）mysql官网(https://dev.mysql.com/downloads/file/?id=476233)下载mysql community downloads.解压到自己的文件夹。新建一个my.ini的文件内容{
+　　　[mysqld]
+　　　# 设置3306端口
+　　　port=3306
+　　　# 设置mysql的安装目录
+　　　basedir=E:\\software\\mysql\\mysql-8.0.11-winx64   # 切记此处一定要用双斜杠\\，单斜杠我这里会出错，不过看别人的教程，有的是单斜杠。自己尝试吧
+　　　# 设置mysql数据库的数据的存放目录
+　　　datadir=E:\\software\\mysql\\mysql-8.0.11-winx64\\Data   # 此处同上
+　　　# 允许最大连接数
+　　　max_connections=200
+　　　# 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统
+　　　max_connect_errors=10
+　　　# 服务端使用的字符集默认为UTF8
+　　　character-set-server=utf8
+　　　# 创建新表时将使用的默认存储引擎
+　　　default-storage-engine=INNODB
+　　　# 默认使用“mysql_native_password”插件认证
+　　　default_authentication_plugin=mysql_native_password
+　　　[mysql]
+　　　# 设置mysql客户端默认字符集
+　　　default-character-set=utf8
+　　　[client]
+　　　# 设置mysql客户端连接服务端时默认使用的端口
+　　　port=3306
+　　　default-character-set=utf8
+　　　}
+　　　（2）配置环境变量：
+　　　右键我的电脑，属性，高级设置，环境变量配置，path,新建将MySQL的bin目录添加到环境变量中。
+　　　（3）安装MySQL
+管理员身份运行cmd,cd 到bin目录下，执行mysqld --initialize --console命令之后会打印root的初始密码记住这个密码，之后的登陆会用到，如果忘记了删掉初始化的 datadir 目录，再执行一遍初始化命令，又会重新生成的。
+　　　之后还是在bin目录下执行mysqld --install 命令安装mysql_service，后面可以加服务名，默认为mysql.   可以通过命令net start mysql启动MySQL的服务了。通过命令net stop mysql停止服务。通过命令sc delete MySQL/mysqld -remove卸载 MySQL 服务
+　　　mysql -u root -p  之后输入刚才在上面记住的密码
+在MySQL中执行命令：
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';  
+就可以完成新密码的设置了。
+在Mysql命令下就可以使用Mysql的命令，比如show databases; show tables;
+
+2.mysql可视化工具的安装。Navicat 首先去官网下载，安装完成后 ，点击试用。
+下载破解文件，关闭杀毒软件，管理员运行（D:\navicat_for_mysql\破解\Navicat_Keygen_Patch_v4.8_By_DFoX）.exe文件。点击patch,选中navicat.exe，下面的一个按钮调成MySQL，打开navicat,点击注册，点击破解软件的中间的generate，点击激活，将navicat产生的码输入到破解软件的框中，然后	点击左下角的generate然后将破解码输入到navicat中就可以了。
+
