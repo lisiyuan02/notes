@@ -78,7 +78,19 @@ Date:2019.11.18
 	git branch -d <branch name>　　　　　　　　　　　　　　　#删除本地分支
 	git remote prune origin                   #解决已经删除了远程分支，但是git branch -a 还显示的问题,prune就是裁剪的意思
 
+２．git 创建分支
+	git branch <branch name>
+	git checkout -b <branch name>             #创建分支并且切换到分支
 
+３．git 推动本地分支到远程分支
+	git push origin <branch name>:<branch name>
+
+４．git 关联本地分支与远程分支
+	git branch --set-upstream-to=origin/<branch name> <branch name>
+
+５．首次使用push 　　　　git push -u origin master  
+	之后就可以不加参数的使用push ；　git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，
+	默认采用matching方法，现在改为默认采用simple方式。
 
 
 
