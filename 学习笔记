@@ -69,3 +69,24 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密�
 
 3.吴恩达视频教程课时8
 
+
+Date:2019.11.18
+
+１．git 删除本地及远程分支
+	git branch -a                             #查看目前的所有本地以及远程分支
+	git push origin --delete <branch name>    #删除远程分支
+	git branch -d <branch name>　　　　　　　　　　　　　　　#删除本地分支
+	git remote prune origin                   #解决已经删除了远程分支，但是git branch -a 还显示的问题,prune就是裁剪的意思
+
+
+
+
+
+
+
+
+
+
+
+
+
