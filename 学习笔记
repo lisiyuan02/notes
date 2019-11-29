@@ -123,8 +123,11 @@ Date:2019.11.26
 
 Date:2019.11.28
 	ddpg算法中，目标函数定义为折扣累计奖励胡期望．在相关论文中证明了目标函数关于策略网络的梯度，等价于动作价值函数Ｑ关于策略参数的期望梯度。
-	
 
+
+	
+Date:2019.11.29
+	Regression(回归)，　Dimensionality Reduction（降维），　Classfication（分类），　Clustering（聚类）
 
 
 
