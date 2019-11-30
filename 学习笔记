@@ -131,10 +131,12 @@ Date:2019.11.29
 
 
 Date:2019.11.30
-	推荐使用conda安装tensorflow: 对于cpu版本的tensorflow将会带来更快的性能提升；对于gpu版本的tensorflow将会主动安装缺失的一些必要的依赖工具（cuda cudnn）
+1.	推荐使用conda安装tensorflow: 对于cpu版本的tensorflow将会带来更快的性能提升；对于gpu版本的tensorflow将会主动安装缺失的一些必要的依赖工具（cuda cudnn）
 				所以会更加方便。
 	只需使用命令 conda install tensorflow-gpu，这些库就会自动安装成功，且版本与 tensorflow-gpu 包兼容。此外，conda 安装这些库的位置不会与通过其他方法安装的库的其他实例产生冲突。
 	不管使用 pip 还是 conda 安装 GPU 支持的 TensorFlow，NVIDIA 驱动程序都必须单独安装
+2.关于git 版本回滚(reset)
+	https://blog.csdn.net/lvsehaiyang1993/article/details/80821976
 
 
 
