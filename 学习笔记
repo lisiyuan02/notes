@@ -1,4 +1,4 @@
-Date:2019.11.17
+﻿Date:2019.11.17
 
 1. 吴恩达视频教程第一章　　学习网址https://study.163.com/course/courseLearn.htm?courseId=1004570029#/learn/text?lessonId=1050360369&courseId=1004570029
 
@@ -128,6 +128,13 @@ Date:2019.11.28
 	
 Date:2019.11.29
 	Regression(回归)，　Dimensionality Reduction（降维），　Classfication（分类），　Clustering（聚类）
+
+
+Date:2019.11.30
+	推荐使用conda安装tensorflow: 对于cpu版本的tensorflow将会带来更快的性能提升；对于gpu版本的tensorflow将会主动安装缺失的一些必要的依赖工具（cuda cudnn）
+				所以会更加方便。
+	只需使用命令 conda install tensorflow-gpu，这些库就会自动安装成功，且版本与 tensorflow-gpu 包兼容。此外，conda 安装这些库的位置不会与通过其他方法安装的库的其他实例产生冲突。
+	不管使用 pip 还是 conda 安装 GPU 支持的 TensorFlow，NVIDIA 驱动程序都必须单独安装
 
 
 
