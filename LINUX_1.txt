@@ -1,0 +1,33 @@
+cd Document/      #代表相对路径进入文件夹
+cd ..                       #返回上一级
+cd../../                    #返回上两级
+~		#代表主目录
+cd ~		#就直接回到主目录
+touch file 		#创建文件
+ls		#列出所有文件夹
+ls -l       		#ls后面可以跟参数 l参数表明long全部信息
+ls -a		#代表all 将隐藏文件夹也会显示出来
+ls -lh		#显示信息更清楚
+ls --help       
+clear		#清除窗口
+  touch  file file2       #多个文件创建
+cp old new                #copy旧文件到新文件
+cp -i file filecopy      #若文件覆盖提醒
+cp file1 folder1/       #将一个文件复制到另一个文件夹
+cp -R folder1/ folder/ #R代表递归 就是一个文件夹在一个文件夹里面
+cp file* folder2/       #将以file开头的文件全部复制到文件夹中
+cp *4 folder2/          #将以4结尾的问价都复制到文件夹中
+cp file1 file2 folder/    #将两个文件放入一个文件夹中
+
+
+mv file1 folder/        #将文件移动到文件夹
+mv file filerename   #可以通过这种方法给文件换名字
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+显卡驱动的版本必须大于等于cuda的sh文件名里面的版本号
+你需要好好看看自己的驱动型号了，cuda9.0必须要Nivdia 384及以上才可以正常安装，我的驱动是387.12就符合要求，如果你的型号小于384那还是恭喜你， 依旧需要重装驱动了。如果你的大于384，你就可以跳过此步，进行下面的操作了
+
+nvidia gtx2080显卡，安装驱动440.31 duda9.0  cudnn7.05
+
+参考网站以下：
+https://blog.csdn.net/mtllyb/article/details/79505012
+https://blog.csdn.net/zhang970187013/article/details/81012845
+https://blog.csdn.net/weixin_41036461/article/details/83011089
+
+一.首先安装nvidia驱动
+	nvidia-smi用于查看驱动型号
+1.nvidia官网查看自己显卡型号的驱动下载https://www.nvidia.cn/Download/index.aspx?lang=cn
+2.删除旧的驱动sudo apt-get purge nvidia*
+3.禁用自带的 nouveau nvidia驱动　　sudo gedit /etc/modprobe.d/blacklist.conf　　
+	在文本最后添加以下内容：
+		blacklist nouveau
+		option nouveau modeset=0
+		保存退出，执行以下命令生效：sudo update-initramfs -u
+	重启电脑后输入：lsmod | grep nouveau　　　　没有任何输出说明禁用成功。
+4.sudo service lightdm stop
+5.cd进驱动下载目录添加执行权限　　
+	sudo chmod a+x NVIDIA-Linux-x86_64-440.31.run
+6.进行安装　　sudo sh NVIDIA-Linux-x86_64-440.31.run –no-x-check –no-nouveau-check –no-opengl-files
+		–no-x-check安装驱动时关闭X服务 
+		–no-nouveau-check安装驱动时禁用nouveau    
+		–no-opengl-files只安装驱动文件，不安装OpenGL文件
+		接下来会有些报错信息：
+			(1):报错the distribution-providedpre-install script failed!不必理会，继续安装。
+			(2):提示32位兼容问题，不用理会。
+			(3):安装时选择不启用Xorg.conf服务
+7.sudo service lightdm start
+8. nvidia-smi 查看显卡信息
+
+二.安装cuda9.0
+1. https://developer.nvidia.com/cuda-90-download-archive下载网址下载runfile文件
+2. cd 到cuda下载目录进行安装。sudo sh cuda_9.0.176_384.81_linux.run 
+3. 	（1）按q键跳过安装须知，输入accept接受。
+	（2）问你驱动装不装，输入n，选择不装，上面装过了。
+	（3）问你CUDA装不装，输入y，选择安装。回车键安装在默认位置(也可以自己选择位置安装)。
+	（4）问你要不要创建链接，输入y，选择创建。
+	（5）问你sample装不装，因为我们只是调用CUDA，不去写CUDA程序，输入n，选择不安装。
+4. gedit ~/.bashrc 
+	# 随便写点啥表示你自己写的不是电脑加的，删除的时候好识别
+	export PATH="/usr/local/cuda-9.0/bin:$PATH"
+	export LD_LIBRARY_PATH="/usr/local/cuda-9.0/lib64:$LD_LIBRARY_PATH"
+	source ~/.bashrc
+三.安装cuDNN7.0
+1. 下载cudnn网址　https://developer.nvidia.com/cudnn         cudnn v7.0.5 library for linux
+2. cd 进目录　　　　tar -xzvf cudnn-9.0-linux-x64-v7.tgz
+3. 	sudo cp cuda/include/cudnn.h /usr/local/cuda/include   复制
+	sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64　　　　　复制
+	sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*　　添加权限
+
+四. 安装tensorflow-gpu版本
+
+
+
+
+
+
+
+
+
+
+
+
+
+
