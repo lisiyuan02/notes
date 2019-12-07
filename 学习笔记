@@ -139,6 +139,33 @@ Date:2019.11.30
 	https://blog.csdn.net/lvsehaiyang1993/article/details/80821976
 
 
+Date:2019.12.07
+
+1.怎样通过windows远程操控linux(ssh)
+	(1)首先linux安装openssh:sudo apt-get install openssh-server
+	(2)其次windows安装tuppy软件
+	(3)linux终端输入ifconfig查看ip地址（如果没有这个命令，则sudo spt install net-tools）
+	(4)将获得的ip地址填入tuppy中认证用户名密码就可以了
+2.怎样通过androd操控linux(ssh)
+	(1)首先linux安装openssh:sudo apt-get install openssh-server
+	(2)androd手机应用商店查找juiceSSH软件进行下载安装
+	(3)linux终端输入ifconfig查看ip地址
+	(4)juiceSSH中添加连接输入ip地址进行连接。
+3.TeamViewer和VNC(桌面形式，会卡)
+	(1)TeamViewer可以不在局域网中(通过先链接外网，再链接回来的策略)操控电脑，操作方法是linux和windows中有同样版本的teamviwer，进行操纵就可以了。
+	(2)VNC:linux中安装：sudo apt-get install x11vnc
+			　　　 x11vnc -storepasswd之后输入密码，输入y。
+			　　　　x11vnc -usepw   要求使用密码形式开启vncserve（如果出现闪退，则命令后加，-forever）
+	　　　　　　　windows安装Tightvnc　输入之前输入的密码进行链接就会显示图形界面了。
+4.（１）怎样将windows中的文件推到linux 进行计算
+  ssh lsy@10.0.119.167 python < 1.py
+  ssh lsy@10.0.119.167 "export DISPLAT=0;python < 1.py"针对运行的程序中会出现打开窗口的情况下使用命令
+　多个文件可以先复制过去然后运行，使用命令　　　scp 文件　用户名＠局域网地址
+
+2.（２）设置共享文件夹
+　linux中新建一个文件夹作为共享文件夹，右键local network share 勾选share this folder /allow athers...应用。
+　打开终端    sudo smbpasswd -a lsy  可以设置一个用来链接的smb密码
+然后Ｗｉｎｄｏｗｓ中找到网络　设置刚才的密码
 
 
 
