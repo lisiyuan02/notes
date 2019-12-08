@@ -22,6 +22,7 @@ git branch -vv　查看本地分支与远端分支是否建立了联系
 
 可以使用一个命令 git checkout -b branch1  创建分支１并且切换到banch1
 git pull 把远端的好多请求拉回本地（更新一下代码），然后　git merge branch1 在master基础上与branch1合并，git push 推到远端
+
 (5) 合并分支　git merge branch1 就合并了分支了。
 (6) 记住那张图https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg
 
@@ -91,7 +92,11 @@ Date:2019.11.23
 ５．首次使用push 　　　　git push -u origin master  
 	之后就可以不加参数的使用push ；　git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，
 	默认采用matching方法，现在改为默认采用simple方式。
-
+6. 查看与修改用户名和邮箱
+	git config user.name      		#查看当前的用户名
+	git config user.email     		#查看当前的邮箱
+	git config --global user.name "xxx"		#修改用户名
+	git config --global user.email "xxx@xxx"	#修改邮箱
 
 
 
