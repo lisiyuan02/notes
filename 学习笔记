@@ -163,12 +163,13 @@ Date:2019.12.07
 			　　　　x11vnc -usepw   要求使用密码形式开启vncserve（如果出现闪退，则命令后加，-forever）
 	　　　　　　　windows安装Tightvnc　输入之前输入的密码进行链接就会显示图形界面了。
 4.（１）怎样将windows中的文件推到linux 进行计算
-  ssh lsy@10.0.119.167 python < 1.py
-  ssh lsy@10.0.119.167 "export DISPLAT=0;python < 1.py"针对运行的程序中会出现打开窗口的情况下使用命令
+  ssh lsy@10.0.119.167 python < 1.py（目前为止行不通）
+  ssh lsy@10.0.119.167 "export DISPLAT=:0;python < 1.py"针对运行的程序中会出现打开窗口的情况下使用命令
 　多个文件可以先复制过去然后运行，使用命令　　　scp 文件　用户名＠局域网地址
 	scp D:\1.py lsy@10.0.119.167:/home/lsy/notes/      （成功）
-
-2.（２）设置共享文件夹
+	scp -r  地址 地址  （传文件夹）
+	export DISPLAT=:0;python 1.p(直接就可运行)
+   （２）设置共享文件夹
 　linux中新建一个文件夹作为共享文件夹，右键local network share 勾选share this folder /allow athers...应用。
 　打开终端    sudo smbpasswd -a lsy  可以设置一个用来链接的smb密码
 然后Ｗｉｎｄｏｗｓ中找到网络　设置刚才的密码
