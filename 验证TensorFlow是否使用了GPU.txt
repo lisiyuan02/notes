@@ -1,0 +1,6 @@
+Windows系统下的gpu环境是 tensorflow4
+验证：	import tensorflow
+	from tensorflow.python.client import device_lib
+	print(device_lib.list_local_devices())
+
+	之后也可以使用nvidia-smi命令来查看GPU使用情况（如果命令错误：cd进入C:\Program Files\NVIDIA Corporation\NVSMI或者将路径添加到path）

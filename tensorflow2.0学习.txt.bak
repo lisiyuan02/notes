@@ -1,7 +1,7 @@
 Date:2019.11.30
 
 1. 学习教程：https://www.bilibili.com/video/av62215565?p=7         该学8
-当定义tf.keras.layer.Dense()层的时候就完成了（ax1+bx2......）
+当定义ft.keras.layer.Dense()层的时候就完成了（ax1+bx2......）
 
 model = tf.keras.Sequential([tf.keras.Dense(10, input_shape=(3,), activation='relu')   #10代表输出参数的个数，第二输入, 第三激活函数
 			])                                                        #可以直接在括号里定义模型层，也可以下一语句使用model.add()来定义

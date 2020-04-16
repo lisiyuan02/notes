@@ -149,7 +149,7 @@ Date:2019.12.07
 1.怎样通过windows远程操控linux(ssh)
 	(1)首先linux安装openssh:sudo apt-get install openssh-server
 	(2)其次windows安装tuppy软件
-	(3)linux终端输入ifconfig查看ip地址（如果没有这个命令，则sudo apt install net-tools）
+	(3)linux终端输入ifconfig查看ip地址（如果没有这个命令，则sudo spt install net-tools）
 	(4)将获得的ip地址填入tuppy中认证用户名密码就可以了
 2.怎样通过androd操控linux(ssh)
 	(1)首先linux安装openssh:sudo apt-get install openssh-server
