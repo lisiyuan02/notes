@@ -183,6 +183,11 @@ Date:2019.12.07
 
  Date:2019.12.23
 
+Date :2020.10.16
+
+1.解决 Cannot open D:\Program Files\Anaconda3\Scripts\pip-script.py 问题
+	python -m pip install --upgrade pip
+
 
 
 
