@@ -188,6 +188,8 @@ Date :2020.10.16
 1.解决 Cannot open D:\Program Files\Anaconda3\Scripts\pip-script.py 问题
 	python -m pip install --upgrade pip
 
+2.tensorflow把前台(即python程序)与后台程序之间的连接称为"会话(Session)"。
+
 
 
 
