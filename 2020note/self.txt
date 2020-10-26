@@ -1,0 +1,26 @@
+2020.10.26
+
+self只能在函数内部使用，属性前面加self.表明该属性是实例属性，在该类中可以全局访问，
+但是只有先在__init__初始化之后才能被实例直接访问，如果方法中直接定义属性，则为局部属性，只能被该方法引用。
+在类中定义的属性是类属性，不会跟着实例的变化而变化。
+eg:
+class Car:
+    def __init__(self):
+        self.a = 11
+        self.b = 22
+        self.show()
+    def show(self):
+        c = 33
+        self.d = 44
+
+ls = list()
+for i in range(3):
+    ls.append(Car()) #定义了三个实例化对象
+
+print(ls[0].a)
+print(ls[0].b)
+#print(ls[0].show())
+print(ls[0].d)
+
+
+
