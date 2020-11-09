@@ -1,0 +1,2 @@
+关于tensorlfow中的session讲解
+https://www.cnblogs.com/zyly/p/8869763.html

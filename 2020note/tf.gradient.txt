@@ -1,0 +1,17 @@
+tf.gradient()函数是求导函数，简单的三个参数分别为（ys, xs, grad_ys）
+ys，xs可以使tensor，也可以使list，如果是list，则输出结果的个数和xs的个数相同。
+
+1、tf.gradients()实现ys对xs求导
+2、求导返回值是一个list，list的长度等于len(xs)
+3、假设返回值是[grad1, grad2, grad3]，ys=[y1, y2]，xs=[x1, x2, x3]。则，真实的计算过程为:
+	grad1= y1/x1 + y2/x1
+ 
+	grad2= y1/x2 + y2/x2
+ 
+	grad3= y1/x3 + y2/x3
+
+例如ys=[y1,y2,y3], xs=[x1,x2,x3,x4]，那么tf.gradients(ys,xs)=[d(y1+y2+y3)/dx1,d(y1+y2+y3)/dx2,d(y1+y2+y3)/dx3,d(y1+y2+y3)/dx4]
+grad_ys 是ys的加权向量列表，和ys长度相同，当grad_ys=[q1,q2,g3]时，tf.gradients(ys,xs，grad_ys)=[d(g1*y1+g2*y2+g3*y3)/dx1,d(g1*y1+g2*y2+g3*y3)/dx2,d(g1*y1+g2*y2+g3*y3)/dx3,d(g1*y1+g2*y2+g3*y3)/dx4]
+
+网址：  https://www.bbsmax.com/A/A7zgpmNYJ4/
+	https://blog.csdn.net/hustqb/article/details/80260002

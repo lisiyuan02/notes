@@ -1,0 +1,3 @@
+1、tf.Variable()在检测到命名冲突时，会自动处理，而tf.get_variable()则会报错。
+2、当需要共享变量时，需要使用tf.get_variable()
+3、tf.Variable()需要在定义时就赋予初始值
